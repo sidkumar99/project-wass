@@ -1,0 +1,39 @@
+<app-product-form (formEvent)="newProduct($event)"></app-product-form>
+
+<table mdbTable bordered="true" striped="true">
+  <thead>
+    <tr>
+      <th *ngFor="let head of displayedColumns" scope="col">{{ head }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let el of products_list; index as i">
+      <th scope="row" style="font-size: 20px;">{{ i }}</th>
+      <th scope="row" style="font-size: 20px;">{{ el }}</th>
+      <td>
+        <button (click)="onDeleteClick(i)" class="btn btn-danger">
+          Delete
+        </button>
+      </td>
+      <td>
+        <div class="md-form">
+          <input
+            #newName
+            type="text"
+            id="i"
+            placeholder="Enter New Name"
+            class="form-control"
+          />
+        </div>
+      </td>
+      <td>
+        <button (click)="onEditClick(i, newName.value)" class="btn btn-warning">
+          Edit
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-secondary">Purchase</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

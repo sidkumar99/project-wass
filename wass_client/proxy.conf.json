@@ -1,0 +1,31 @@
+{
+  "/products/*": {
+    "target": "http://localhost:3000/users",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/products": "" }
+  },
+
+  "/delete/*": {
+    "target": "http://localhost:3000/delete",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/delete": "" }
+  },
+  "/add/*": {
+    "target": "http://localhost:3000/add",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/add": "" }
+  },
+  "/edit/*": {
+    "target": "http://localhost:3000/edit",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/edit": "" }
+  }
+}

@@ -1,0 +1,76 @@
+<button *ngIf="!show" (click)="onClick()" class="btn btn-success">
+  Add Product
+</button>
+<button *ngIf="show" (click)="onClick()" class="btn btn-danger">Cancel</button>
+<!-- Material form register -->
+<div *ngIf="show">
+  <div class="card">
+    <h5 class="card-header info-color white-text text-center py-4">
+      <strong>New Item</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="card-body px-lg-1 pt-0">
+      <!-- Form -->
+      <form
+        class="text-center"
+        style="color: #3f729b;"
+        action="#!"
+        [formGroup]="productForm"
+      >
+        <div class="form-row">
+          <div class="col">
+            <!-- First name -->
+            <div class="md-form">
+              <input
+                type="text"
+                id="materialRegisterFormFirstName"
+                class="form-control"
+                formControlName="Name"
+                placeholder="Name"
+              />
+              <label for="materialRegisterFormFirstName"></label>
+            </div>
+          </div>
+          <div class="col">
+            <!-- Last name -->
+            <div class="md-form">
+              <input
+                type="email"
+                id="materialRegisterFormLastName"
+                class="form-control"
+                formControlName="Brand"
+                placeholder="Brand"
+              />
+              <label for="materialRegisterFormLastName"></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- E-mail -->
+        <div class="md-form mt-0">
+          <input
+            type="email"
+            id="materialRegisterFormEmail"
+            class="form-control"
+            formControlName="Price"
+            placeholder="Price"
+          />
+          <label for="materialRegisterFormEmail"></label>
+        </div>
+
+        <!-- Sign up button -->
+        <button
+          class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+          type="button"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+
+        <!-- Form -->
+        <!-- Material form register -->
+      </form>
+    </div>
+  </div>
+</div>
