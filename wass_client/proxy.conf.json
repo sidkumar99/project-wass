@@ -62,5 +62,19 @@
     "logLevel": "debug",
     "changeOrigin": true,
     "pathRewrite": { "^/explore": "" }
+  },
+  "/buy/*": {
+    "target": "http://localhost:3000/buy",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/buy": "" }
+  },
+  "/procedure/*": {
+    "target": "http://localhost:3000/procedure",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/procedure": "" }
   }
 }

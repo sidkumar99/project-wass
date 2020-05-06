@@ -182,4 +182,30 @@ export class ProductsService {
       body: JSON.stringify(data),
     }).then((resp) => resp.json());
   }
+
+  buy(pid, mail, user) {
+    var data = {
+      _pid: pid,
+      email: mail,
+      _uid: user,
+    };
+
+    return fetch("/buy/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Connection: "keep-alive" },
+      body: JSON.stringify(data),
+    }).then((resp) => resp.json());
+  }
+
+  procedure(mail) {
+    var data = {
+      email: mail,
+    };
+
+    return fetch("/procedure/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Connection: "keep-alive" },
+      body: JSON.stringify(data),
+    }).then((resp) => resp.json());
+  }
 }

@@ -55,7 +55,13 @@ export class ProductTableComponent implements OnInit {
     });
   }
 
-  onBuy() {
-    console.log(this.productService.getUser());
+  onBuy(idx) {
+    var id = this.id_list[idx];
+    var pid = Math.ceil(Math.random() * 10000);
+    this.productService
+      .buy(pid, this.productService.getUser(), id)
+      .then((resp) => {
+        console.log("bought");
+      });
   }
 }
