@@ -5,7 +5,7 @@ router.post("/", function (req, res, next) {
   console.log("made it here");
   console.log(req.body.id);
   res.locals.connection.query(
-    "insert into products(id,name,brand,status,metadata) values(" +
+    "insert into fashion_item(_productId,name,brand,status,metadata) values(" +
       req.body.id +
       "," +
       '"' +

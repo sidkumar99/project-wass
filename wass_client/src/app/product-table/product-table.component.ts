@@ -10,6 +10,10 @@ export class ProductTableComponent implements OnInit {
   @Input() products_list;
   @Input() id_list;
   @ViewChild("newName") newName: ElementRef;
+  @ViewChild("searchArg") searchArg: ElementRef;
+
+  displayAll: boolean = true;
+  queryprods: any[];
   prods: any[];
   displayedColumns: string[] = ["#", "product"];
   constructor(private productService: ProductsService) {}
@@ -24,16 +28,34 @@ export class ProductTableComponent implements OnInit {
   }
 
   newProduct(event) {
-    console.log(event);
     this.products_list.unshift(event.Name);
     this.id_list.unshift(event.Id);
   }
 
   onEditClick(idx, Name) {
-    console.log(idx, Name);
     var id = this.id_list[idx];
     this.products_list[idx] = Name;
     this.productService.editUser(id, Name);
     this.newName.nativeElement.value = "";
+  }
+
+  OnSearch(event) {
+    if (event.target.value.length == 0) {
+      this.displayAll = true;
+      return;
+    }
+    this.productService.searchByBrand(event.target.value).then((resp) => {
+      const keys = Object.keys(resp);
+      var prods = [];
+      for (const key of keys) {
+        prods.push(resp[key].name);
+      }
+      this.queryprods = prods;
+      this.displayAll = false;
+    });
+  }
+
+  onBuy() {
+    console.log(this.productService.getUser());
   }
 }

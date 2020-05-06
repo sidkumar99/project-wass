@@ -22,7 +22,6 @@ export class ProductFormComponent implements OnInit {
 
   onClick() {
     this.show = !this.show;
-    console.log(this.show);
   }
 
   onSubmit() {

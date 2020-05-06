@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
       var idvals = [];
       for (const key of keys) {
         prods.push(prod[key].name);
-        idvals.push(prod[key].id);
+        idvals.push(prod[key]._productId);
       }
       this.products = prods;
       this.ids = idvals;

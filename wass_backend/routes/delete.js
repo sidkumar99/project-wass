@@ -5,7 +5,7 @@ router.post("/", function (req, res, next) {
   console.log("made it here");
   console.log(req.body.id);
   res.locals.connection.query(
-    "DELETE from products where id = " + req.body.id + "",
+    "DELETE from fashion_item where _productId = " + req.body.id + "",
     function (error, results, fields) {
       if (error) throw error;
       res.send(JSON.stringify(results));

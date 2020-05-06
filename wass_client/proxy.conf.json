@@ -27,5 +27,40 @@
     "logLevel": "debug",
     "changeOrigin": true,
     "pathRewrite": { "^/edit": "" }
+  },
+  "/search/*": {
+    "target": "http://localhost:3000/search",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/search": "" }
+  },
+  "/new/*": {
+    "target": "http://localhost:3000/new",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/new": "" }
+  },
+  "/auth/*": {
+    "target": "http://localhost:3000/auth",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/auth": "" }
+  },
+  "/friend/*": {
+    "target": "http://localhost:3000/friend",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/friend": "" }
+  },
+  "/explore/*": {
+    "target": "http://localhost:3000/explore",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/explore": "" }
   }
 }
